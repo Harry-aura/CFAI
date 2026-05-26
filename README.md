@@ -1,0 +1,2 @@
+# CFAI
+Time table generator 
