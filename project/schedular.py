@@ -1,7 +1,7 @@
 import sys
 import random
-from project import DATA
-from project.CONSTRAINS import process_schedule_validation
+import DATA
+from CONSTRAINS import process_schedule_validation
 
 random.seed(42)
 
