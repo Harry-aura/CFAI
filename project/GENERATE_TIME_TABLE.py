@@ -1,4 +1,4 @@
-from project import DATA, schedular
+import DATA, schedular
 
 
 def render_table(schedules):
