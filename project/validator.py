@@ -1,4 +1,4 @@
-from project import DATA
+import DATA
 from collections import defaultdict
 
 
