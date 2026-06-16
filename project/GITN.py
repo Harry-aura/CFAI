@@ -1,4 +1,4 @@
-from project.DATA import consecutive_blocks
+from DATA import consecutive_blocks
 # ==========================================
 # MANDATORY RULES (Do Not Violate)
 # ==========================================
