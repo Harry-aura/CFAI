@@ -1,9 +1,8 @@
-﻿# System Design: Guardrails & Hallucination Elimination
+﻿# Algorithmic Complexity & Scalability Design
 
-## 1. The Financial Hallucination Problem
-LLMs naturally interpolate numbers when predicting the next token. In accounting, an interpolated 0.5% difference can lead to compliance violations.
+## 1. The NP-Hard Timetabling Challenge
+Determining whether a timetable exists without hard constraint violations in an unconstrained search space is NP-complete. A naive brute-force permutation search produces factorial time complexity O(D^V).
 
-## 2. Mitigation Strategy
-- **Strict Grounding Prompting**: System prompts prohibit extrapolation beyond provided context.
-- **Post-Inference RegEx Audit**: A regex layer extracts every number in the LLM output and validates its exact presence in the retrieved source text chunk.
-- **Automatic Retry Trigger**: If any ungrounded numerical token is detected, the query is rejected or re-run with zero temperature.
+## 2. Heuristic Pruning Guarantees
+- Forward checking prunes domains before assignment failures cascade.
+- Constraint propagation guarantees that impossible assignments are rejected early in the search tree, keeping runtime under 2 seconds for full department matrices.

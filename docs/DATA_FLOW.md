@@ -1,25 +1,21 @@
-﻿# RAG Data Flow & Grounded Inference Pipeline
+﻿# Timetable Generation Data Flow & Conflict Resolution
 
 ~~~text
-[User Prompt: "Compare Q2 Gross Margins"]
-                      │
-                      ▼
-         [PII & Injection Sanitizer]
-                      │
-                      ▼
-         [Parallel Hybrid Retrieval]
-         ├── Dense Cosine Similarity
-         └── Sparse BM25 Keyword Match
-                      │
-                      ▼
-      [Reciprocal Rank Fusion: Top-K Extraction]
-                      │
-                      ▼
-         [Context-Augmented Inference]
-                      │
-                      ▼
-         [Deterministic Numeric Cross-Check]
-                      │
-                      ▼
-      [Emit Verified Answer with Citations]
+[Faculty, Course & Room Constraints Loaded]
+                     │
+                     ▼
+         [Build Conflict Graph]
+                     │
+                     ▼
+   [Variable Ordering via MRV Heuristic]
+                     │
+                     ▼
+     [Forward Checking Slot Allocation]
+                     │
+           {Hard Conflict Detected?}
+           ├── Yes ──> [Backtrack to Prior Assignment State]
+           └── No ───> [Commit Slot & Evaluate Soft Objective Score]
+                     │
+                     ▼
+     [Emit Structured Master Schedule Matrix]
 ~~~
